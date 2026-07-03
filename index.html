@@ -16,7 +16,6 @@
 <body>
   <!-- subtle visual overlays -->
   <div class="overlay-noise" aria-hidden="true"></div>
-  <div class="overlay-vignette" aria-hidden="true"></div> 
 
   <header class="nav" id="top">
     <a class="nav-brand" href="#top">VIPER</a>
@@ -33,17 +32,17 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <p class="hero-eyebrow">systems &amp; gameplay programmer</p>
-      <h1 class="glitch" data-text="VIPER">VIPER</h1>
+      <h1>VIPER</h1>
       <p class="hero-sub">
-        Five years in the dark, building <span class="hl">horror games</span> and the
-        systems that keep them breathing. <span class="hl">Luau</span> · Roblox ·
+        Systems and gameplay programmer with five years of experience building
+        polished interactive projects in <span class="hl">Luau</span> · Roblox ·
         <span class="hl">C#</span> · Unity.
       </p>
       <div class="hero-actions">
         <a class="btn btn-solid" href="#works">View my work</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
-      <div class="hero-scroll" aria-hidden="true">▼ ▼ ▼</div>
+      <div class="hero-scroll" aria-hidden="true"><span>⌄</span></div>
     </section>
 
     <!-- ============ ABOUT ============ -->
@@ -311,36 +310,28 @@ sf:Fetch("ambience/hum")</pre>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section section-contact" id="contact">
-      <h2 class="section-title">
-        <span class="section-num">03</span> Contact
-        <span class="section-tag">where to find me</span>
-      </h2>
-      <p class="contact-lead">Want to work together? <span class="hl">Discord</span> is the fastest way to reach me.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="https://discordapp.com/users/586817434170949651" target="_blank" rel="noopener">
-          <span class="contact-icon">✦</span> Discord <span class="contact-note">recommended</span>
-        </a>
-        <a class="contact-link" href="https://github.com/greenviper126" target="_blank" rel="noopener">
-          <span class="contact-icon">⌥</span> GitHub
-        </a>
-        <a class="contact-link" href="https://viper126.itch.io/" target="_blank" rel="noopener">
-          <span class="contact-icon">▣</span> itch.io
-        </a>
-        <a class="contact-link" href="https://www.roblox.com/users/2221989135/profile" target="_blank" rel="noopener">
-          <span class="contact-icon">◈</span> Roblox
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/nathan-taylor-9a8557227/" target="_blank" rel="noopener">
-          <span class="contact-icon">▤</span> LinkedIn
-        </a>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="footer">
-    <span class="footer-blink">█</span> VIPER · 2021–2026 · <a href="#top">back to top ↑</a>
+  <footer class="footer" id="contact">
+    <div class="footer-contacts" aria-label="Contact links">
+      <a class="footer-contact-link" href="https://discordapp.com/users/586817434170949651" target="_blank" rel="noopener" aria-label="Discord" title="Discord">
+        <img class="footer-contact-icon" src="images/contact-icon-template.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="footer-contact-link" href="https://github.com/greenviper126" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <img class="footer-contact-icon" src="images/contact-icon-template.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="footer-contact-link" href="https://viper126.itch.io/" target="_blank" rel="noopener" aria-label="itch.io" title="itch.io">
+        <img class="footer-contact-icon" src="images/contact-icon-template.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="footer-contact-link" href="https://www.roblox.com/users/2221989135/profile" target="_blank" rel="noopener" aria-label="Roblox" title="Roblox">
+        <img class="footer-contact-icon" src="images/contact-icon-template.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="footer-contact-link" href="https://www.linkedin.com/in/nathan-taylor-9a8557227/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <img class="footer-contact-icon" src="images/contact-icon-template.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+    <span>VIPER · 2021–2026</span>
+    <a class="footer-top" href="#top">Back to top ↑</a>
   </footer>
 
   <script src="js/video.js" defer></script>

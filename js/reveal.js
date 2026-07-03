@@ -9,24 +9,37 @@
    ============================================================ */
 
 (function () {
-  if (!("IntersectionObserver" in window)) return;
-
   var targets = document.querySelectorAll(".card, .year-divider");
+  var heroScroll = document.querySelector(".hero-scroll");
+  var aboutTitle = document.querySelector("#about .section-title");
 
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // reveal once, then stop watching
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // reveal once, then stop watching
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
 
-  targets.forEach(function (el) {
-    el.classList.add("reveal");
-    observer.observe(el);
-  });
+    targets.forEach(function (el) {
+      el.classList.add("reveal");
+      observer.observe(el);
+    });
+  }
+
+  if (heroScroll && aboutTitle) {
+    function updateHeroScroll() {
+      var titleTop = aboutTitle.getBoundingClientRect().top;
+      heroScroll.classList.toggle("is-hidden", titleTop <= window.innerHeight);
+    }
+
+    window.addEventListener("scroll", updateHeroScroll, { passive: true });
+    window.addEventListener("resize", updateHeroScroll);
+    updateHeroScroll();
+  }
 })();
