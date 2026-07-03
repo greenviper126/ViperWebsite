@@ -7,22 +7,22 @@
   <meta name="description" content="Portfolio of VIPER — self-taught systems and gameplay programmer with 5+ years of experience. Luau/Roblox, Unity/C#, horror games.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐍</text></svg>">
 </head>
 <body>
-
-  <!-- horror overlay: scanlines + vignette -->
-  <div class="overlay-scanlines" aria-hidden="true"></div>
-  <div class="overlay-vignette" aria-hidden="true"></div>
+1
+  <!-- analog-horror overlays: static, scanlines, tracking error, flashlight -->
+  <div class="overlay-noise" aria-hidden="true"></div>
+  <!-- <div class="overlay-scanlines" aria-hidden="true"></div> -->
+  <!--<div class="overlay-tracking" aria-hidden="true"></div> -->>
+  <div class="overlay-vignette" aria-hidden="true"></div> 
 
   <header class="nav" id="top">
-    <a class="nav-brand" href="#top">
-      <span class="nav-prompt">&gt;_</span> VIPER
-    </a>
+    <a class="nav-brand" href="#top">VIPER</a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#works">Works</a>
@@ -35,22 +35,26 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <p class="hero-eyebrow">// systems &amp; gameplay programmer</p>
+      <p class="hero-eyebrow">systems &amp; gameplay programmer</p>
       <h1 class="glitch" data-text="VIPER">VIPER</h1>
       <p class="hero-sub">
-        5+ years building game systems in <span class="hl">Luau</span> and <span class="hl">C#</span>.
-        Drawn to the dark — I like making <span class="hl">horror games</span>.
+        Five years in the dark, building <span class="hl">horror games</span> and the
+        systems that keep them breathing. <span class="hl">Luau</span> · Roblox ·
+        <span class="hl">C#</span> · Unity.
       </p>
       <div class="hero-actions">
         <a class="btn btn-solid" href="#works">View my work</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
-      <div class="hero-scroll" aria-hidden="true">▼</div>
+      <div class="hero-scroll" aria-hidden="true">▼ ▼ ▼</div>
     </section>
 
     <!-- ============ ABOUT ============ -->
     <section class="section" id="about">
-      <h2 class="section-title"><span class="section-num">01</span> About Me</h2>
+      <h2 class="section-title">
+        <span class="section-num">01</span> About Me
+        <span class="section-tag">who I am</span>
+      </h2>
       <div class="about-grid">
         <div class="about-text">
           <p>
@@ -65,14 +69,16 @@
           </p>
         </div>
         <aside class="about-panel">
-          <div class="panel-header">status.log</div>
+          <div class="panel-header">Profile</div>
           <ul class="panel-list">
             <li><span class="k">alias</span> VIPER</li>
+            <li><span class="k">status</span> <span class="status-live">ACTIVE</span></li>
             <li><span class="k">experience</span> 5+ years</li>
             <li><span class="k">primary</span> Luau / Roblox</li>
             <li><span class="k">secondary</span> C# / Unity</li>
             <li><span class="k">focus</span> systems · gameplay · tooling</li>
             <li><span class="k">obsession</span> horror games</li>
+            <li><span class="k">location</span> <span class="redacted">unknown-data</span></li>
           </ul>
         </aside>
       </div>
@@ -80,7 +86,10 @@
 
     <!-- ============ WORKS ============ -->
     <section class="section" id="works">
-      <h2 class="section-title"><span class="section-num">02</span> Works</h2>
+      <h2 class="section-title">
+        <span class="section-num">02</span> Works
+        <span class="section-tag">projects &amp; showcases</span>
+      </h2>
 
       <!-- ---- 2026 ---- -->
       <div class="year-divider"><span>2026</span></div>
@@ -233,7 +242,7 @@ sf:Fetch("ambience/hum")</pre>
       </div>
 
       <!-- ---- Before 2025 ---- -->
-      <div class="year-divider"><span>Before 2025</span></div>
+      <div class="year-divider"><span>BEFORE 2025</span></div>
       <div class="works-grid">
 
         <article class="card">
@@ -307,7 +316,10 @@ sf:Fetch("ambience/hum")</pre>
 
     <!-- ============ CONTACT ============ -->
     <section class="section section-contact" id="contact">
-      <h2 class="section-title"><span class="section-num">03</span> Contact</h2>
+      <h2 class="section-title">
+        <span class="section-num">03</span> Contact
+        <span class="section-tag">where to find me</span>
+      </h2>
       <p class="contact-lead">Want to work together? <span class="hl">Discord</span> is the fastest way to reach me.</p>
       <div class="contact-links">
         <a class="contact-link" href="https://discordapp.com/users/586817434170949651" target="_blank" rel="noopener">

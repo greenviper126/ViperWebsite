@@ -14,7 +14,12 @@ css/
 js/
   video.js           Click-to-load YouTube embeds (keeps the page fast)
   reveal.js          Fade-in-on-scroll animation for cards
+  vhs.js             Analog-horror extras: tape timecode + flashlight cursor
 ```
+
+The look is "recovered VHS tape": static noise, scanlines, a tracking-error band,
+REC/PLAY on-screen display, case-file labels, and a flashlight vignette that
+follows the cursor. All overlays are pure CSS in `css/base.css`.
 
 **Where to edit things:**
 - Add/remove a project → copy a `<article class="card">` block in `index.html`.

@@ -1,6 +1,6 @@
 /* ============================================================
-   layout.css — page skeleton: nav bar, hero, section
-   containers, year dividers, and the footer.
+   layout.css — page skeleton: nav bar, hero (the "tape"),
+   section containers, archive dividers, and the footer.
    ============================================================ */
 
 /* ============ nav ============ */
@@ -13,21 +13,19 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 1.5rem;
-  background: rgba(6, 8, 6, 0.85);
+  background: rgba(4, 5, 4, 0.88);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
 
 .nav-brand {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.2em;
+  font-family: var(--osd);
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
   color: var(--text);
   text-decoration: none;
 }
 .nav-brand:hover { color: var(--green); }
-.nav-prompt { color: var(--green); }
 
 .nav-links {
   display: flex;
@@ -35,6 +33,7 @@
   gap: 1.4rem;
   font-family: var(--mono);
   font-size: 0.85rem;
+  letter-spacing: 0.05em;
 }
 .nav-links a {
   color: var(--text-dim);
@@ -45,12 +44,12 @@
 .nav-cta {
   border: 1px solid var(--green-dark);
   padding: 0.35rem 0.8rem;
-  border-radius: 4px;
+  border-radius: 2px;
   color: var(--green) !important;
 }
 .nav-cta:hover { background: var(--green-dark); }
 
-/* ============ hero ============ */
+/* ============ hero — a tape, mid-playback ============ */
 
 .hero {
   min-height: 100svh;
@@ -62,30 +61,37 @@
   padding: 6rem 1.5rem 3rem;
   position: relative;
   background:
-    radial-gradient(ellipse 60% 45% at 50% 40%, rgba(0, 255, 65, 0.05), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(88, 216, 120, 0.045), transparent 70%),
     var(--bg);
 }
 
 .hero-eyebrow {
   font-family: var(--mono);
   color: var(--text-dim);
-  font-size: 0.9rem;
-  margin-bottom: 0.7rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
 }
 
 .hero h1 {
-  font-family: var(--mono);
-  font-size: clamp(3.5rem, 14vw, 8.5rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-family: var(--osd);
+  font-size: clamp(4.5rem, 17vw, 11rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.12em;
   color: var(--green);
-  text-shadow: 0 0 30px rgba(0, 255, 65, 0.35);
-  animation: flicker 6s infinite;
+  /* chromatic aberration — misaligned color channels, VHS-style */
+  text-shadow:
+    3px 0 rgba(255, 45, 85, 0.35),
+   -3px 0 rgba(60, 255, 220, 0.3),
+    0 0 34px rgba(88, 216, 120, 0.3);
+  animation: flicker 7s infinite;
 }
 
 .hero-sub {
-  max-width: 34rem;
-  margin-top: 1.2rem;
+  max-width: 36rem;
+  margin-top: 1.4rem;
   color: var(--text-dim);
   font-size: 1.05rem;
 }
@@ -93,7 +99,7 @@
 .hero-actions {
   display: flex;
   gap: 1rem;
-  margin-top: 2.2rem;
+  margin-top: 2.4rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -102,12 +108,13 @@
   position: absolute;
   bottom: 2rem;
   color: var(--green-dark);
-  font-size: 0.8rem;
+  font-family: var(--osd);
+  font-size: 1.1rem;
   animation: drift 2.4s ease-in-out infinite;
 }
 
 /* glitch: two clipped copies of the title that jitter briefly
-   once per cycle — the "subtle horror" moment */
+   once per cycle */
 .glitch { position: relative; }
 .glitch::before,
 .glitch::after {
@@ -116,29 +123,30 @@
   inset: 0;
   overflow: hidden;
   opacity: 0;
+  text-shadow: none;
 }
 .glitch::before {
-  color: #0ff;
-  clip-path: inset(20% 0 60% 0);
-  animation: glitch-a 5s infinite steps(1);
+  color: #3cffdc;
+  clip-path: inset(18% 0 58% 0);
+  animation: glitch-a 6s infinite steps(1);
 }
 .glitch::after {
-  color: #f0f;
-  clip-path: inset(65% 0 15% 0);
-  animation: glitch-b 5s infinite steps(1);
+  color: #ff2d55;
+  clip-path: inset(62% 0 12% 0);
+  animation: glitch-b 6s infinite steps(1);
 }
 
 @keyframes glitch-a {
-  0%, 91%  { opacity: 0; transform: none; }
-  92%      { opacity: .8; transform: translate(-4px, 2px); }
-  93%      { opacity: .8; transform: translate(3px, -1px); }
-  94%      { opacity: 0; transform: none; }
+  0%, 88%  { opacity: 0; transform: none; }
+  89%      { opacity: .7; transform: translate(-5px, 2px) skewX(-4deg); }
+  90.5%    { opacity: .7; transform: translate(4px, -1px); }
+  92%      { opacity: 0; transform: none; }
 }
 @keyframes glitch-b {
-  0%, 91%  { opacity: 0; transform: none; }
-  92%      { opacity: .8; transform: translate(4px, -2px); }
-  93%      { opacity: .8; transform: translate(-3px, 1px); }
-  94%      { opacity: 0; transform: none; }
+  0%, 88%  { opacity: 0; transform: none; }
+  89%      { opacity: .7; transform: translate(5px, -2px) skewX(4deg); }
+  90.5%    { opacity: .7; transform: translate(-4px, 1px); }
+  92%      { opacity: 0; transform: none; }
 }
 
 /* ============ sections ============ */
@@ -151,29 +159,40 @@
 
 .section-title {
   font-family: var(--mono);
-  font-size: 1.7rem;
-  letter-spacing: 0.08em;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   margin-bottom: 2.2rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px dashed var(--line);
   padding-bottom: 0.8rem;
 }
 .section-num {
-  color: var(--green-dark);
+  color: var(--green-dim);
   margin-right: 0.6rem;
+}
+.section-tag {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  margin-top: 0.35rem;
 }
 
 .section-contact { padding-bottom: 5rem; }
 
-/* year dividers inside Works */
+/* archive dividers inside Works */
 .year-divider {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin: 3rem 0 1.6rem;
-  font-family: var(--mono);
+  font-family: var(--osd);
   color: var(--green);
-  font-size: 1.05rem;
-  letter-spacing: 0.15em;
+  font-size: 1.35rem;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 10px rgba(88, 216, 120, 0.25);
 }
 .year-divider::before,
 .year-divider::after {
@@ -193,7 +212,7 @@
   padding: 1.6rem 1.5rem;
   text-align: center;
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-dim);
 }
 .footer a { color: var(--text-dim); }

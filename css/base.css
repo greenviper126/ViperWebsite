@@ -1,20 +1,24 @@
 /* ============================================================
    base.css — design tokens, resets, global element styles,
-   and the horror overlays (scanlines + vignette).
+   and the analog-horror overlays (static noise, scanlines,
+   tracking error, flashlight vignette).
    Every other stylesheet builds on the variables defined here.
    ============================================================ */
 
 :root {
-  --bg:        #060806;
-  --bg-raise:  #0b0f0b;
-  --bg-card:   #0d120d;
-  --line:      #1c241c;
-  --green:     #00ff41;
-  --green-dim: #0fbf3f;
-  --green-dark:#053b16;
-  --text:      #c9d1c9;
-  --text-dim:  #7d877d;
-  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --bg:        #040504;
+  --bg-raise:  #0a0d0a;
+  --bg-card:   #0b100c;
+  --line:      #1a221b;
+  --green:     #58d878;   /* phosphor / night-vision green */
+  --green-hot: #8dffab;   /* bright — used sparingly for glows */
+  --green-dim: #3d9c55;
+  --green-dark:#123c1f;
+  --red:       #d3312c;   /* REC dot only */
+  --text:      #c3ccc3;
+  --text-dim:  #75816f;
+  --osd:  "VT323", monospace;                          /* VHS on-screen display */
+  --mono: "Courier Prime", Courier, monospace;         /* case-file typewriter */
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
@@ -38,42 +42,93 @@ a:focus-visible, button:focus-visible {
   outline-offset: 3px;
 }
 
-/* inline green monospace highlight, e.g. <span class="hl">Luau</span> */
-.hl { color: var(--green); font-family: var(--mono); font-size: 0.95em; }
+/* inline green highlight, e.g. <span class="hl">Luau</span> */
+.hl { color: var(--green); font-family: var(--mono); font-size: 0.98em; }
 
-/* ============ horror overlays ============ */
+/* ============ analog-horror overlays ============ */
+
+/* animated VHS static — SVG turbulence noise, jittered in steps */
+.overlay-noise {
+  position: fixed; inset: -50%;
+  width: 200%; height: 200%;
+  pointer-events: none;
+  z-index: 9996;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  animation: noise-jitter 0.4s steps(4) infinite;
+}
+@keyframes noise-jitter {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2%, 1%); }
+  50%  { transform: translate(1%, -2%); }
+  75%  { transform: translate(-1%, 2%); }
+  100% { transform: translate(2%, -1%); }
+}
 
 .overlay-scanlines {
   position: fixed; inset: 0;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 9997;
   background: repeating-linear-gradient(
     to bottom,
     transparent 0px,
-    transparent 2px,
-    rgba(0, 0, 0, 0.14) 3px
+    transparent 3px,
+    rgba(0, 0, 0, 0.18) 4px
   );
   mix-blend-mode: multiply;
-  opacity: .55;
+  opacity: .6;
 }
 
+/* tracking-error band that sweeps down the screen now and then */
+.overlay-tracking {
+  position: fixed;
+  left: 0; right: 0;
+  top: -12%;
+  height: 9vh;
+  pointer-events: none;
+  z-index: 9998;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(141, 255, 171, 0.04) 30%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(141, 255, 171, 0.04) 70%,
+    transparent
+  );
+  filter: blur(1px);
+  animation: tracking-sweep 13s linear infinite;
+}
+@keyframes tracking-sweep {
+  0%, 78%  { transform: translateY(0);      opacity: 0; }
+  80%      { opacity: 1; }
+  96%      { transform: translateY(130vh);  opacity: 1; }
+  97%, 100%{ transform: translateY(130vh);  opacity: 0; }
+}
+
+/* vignette — a soft pool of light at the center of the screen,
+   dark toward the edges; fixed, so it stays put while scrolling */
 .overlay-vignette {
   position: fixed; inset: 0;
   pointer-events: none;
-  z-index: 9997;
-  background: radial-gradient(ellipse at center,
-    transparent 55%,
-    rgba(0, 0, 0, 0.45) 100%);
+  z-index: 9995;
+  background: radial-gradient(
+    ellipse 60vw 60vh at 50% 50%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 /* ============ shared animations ============ */
 
 @keyframes flicker {
   0%, 100% { opacity: 1; }
-  3%   { opacity: .85; }
+  3%   { opacity: .8; }
   3.5% { opacity: 1; }
+  47%  { opacity: 1; }
+  48%  { opacity: .75; }
+  49%  { opacity: 1; }
   62%  { opacity: 1; }
-  63%  { opacity: .8; }
+  63%  { opacity: .85; }
   64%  { opacity: 1; }
 }
 
@@ -87,4 +142,5 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; }
   html { scroll-behavior: auto; }
+  .overlay-tracking { display: none; }
 }
