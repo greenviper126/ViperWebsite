@@ -1,9 +1,8 @@
 /* ============================================================
-   base.css — design tokens, resets, global element styles,
-   and the analog-horror overlays (static noise, scanlines,
-   tracking error, flashlight vignette).
-   Every other stylesheet builds on the variables defined here.
-   ============================================================ */
+  base.css — design tokens, resets, global element styles,
+  and the ambient overlays used across the page.
+  Every other stylesheet builds on the variables defined here.
+  ============================================================ */
 
 :root {
   --bg:        #040504;
@@ -14,11 +13,10 @@
   --green-hot: #8dffab;   /* bright — used sparingly for glows */
   --green-dim: #3d9c55;
   --green-dark:#123c1f;
-  --red:       #d3312c;   /* REC dot only */
   --text:      #c3ccc3;
   --text-dim:  #75816f;
-  --osd:  "VT323", monospace;                          /* VHS on-screen display */
-  --mono: "Courier Prime", Courier, monospace;         /* case-file typewriter */
+  --osd:  "VT323", monospace;
+  --mono: "Courier Prime", Courier, monospace;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
@@ -45,9 +43,9 @@ a:focus-visible, button:focus-visible {
 /* inline green highlight, e.g. <span class="hl">Luau</span> */
 .hl { color: var(--green); font-family: var(--mono); font-size: 0.98em; }
 
-/* ============ analog-horror overlays ============ */
+/* ============ visual overlays ============ */
 
-/* animated VHS static — SVG turbulence noise, jittered in steps */
+/* subtle animated static */
 .overlay-noise {
   position: fixed; inset: -50%;
   width: 200%; height: 200%;
@@ -79,7 +77,6 @@ a:focus-visible, button:focus-visible {
   opacity: .6;
 }
 
-/* tracking-error band that sweeps down the screen now and then */
 .overlay-tracking {
   position: fixed;
   left: 0; right: 0;
@@ -105,8 +102,7 @@ a:focus-visible, button:focus-visible {
   97%, 100%{ transform: translateY(130vh);  opacity: 0; }
 }
 
-/* vignette — a soft pool of light at the center of the screen,
-   dark toward the edges; fixed, so it stays put while scrolling */
+/* centered vignette that stays fixed while scrolling */
 .overlay-vignette {
   position: fixed; inset: 0;
   pointer-events: none;

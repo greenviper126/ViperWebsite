@@ -8,18 +8,17 @@ Pure static HTML/CSS/JS — no build step, no frameworks. Just open it or host i
 ```
 index.html           All the page content (the only HTML file)
 css/
-  base.css           Colors/fonts (CSS variables), resets, horror overlays
+  base.css           Colors/fonts (CSS variables), resets, ambient overlays
   layout.css         Nav bar, hero, section containers, year dividers, footer
   components.css     Cards, tags, YouTube player, buttons, contact links
 js/
-  video.js           Click-to-load YouTube embeds (keeps the page fast)
+  video.js           Click-to-load YouTube embeds with reduced player chrome
   reveal.js          Fade-in-on-scroll animation for cards
-  vhs.js             Analog-horror extras: tape timecode + flashlight cursor
 ```
 
-The look is "recovered VHS tape": static noise, scanlines, a tracking-error band,
-REC/PLAY on-screen display, case-file labels, and a flashlight vignette that
-follows the cursor. All overlays are pure CSS in `css/base.css`.
+The visual direction is dark, cinematic, and slightly glitchy without leaning on
+fake recorder UI. The overlays stay subtle, and the page content remains easy to
+find and edit.
 
 **Where to edit things:**
 - Add/remove a project → copy a `<article class="card">` block in `index.html`.

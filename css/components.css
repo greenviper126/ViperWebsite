@@ -1,8 +1,8 @@
 /* ============================================================
-   components.css — reusable pieces: buttons, the subject
-   dossier, project cards, the VHS video facade, tags, contact
-   links, and the scroll-reveal states used by js/reveal.js.
-   ============================================================ */
+  components.css — reusable pieces: buttons, the profile
+  panel, project cards, the video facade, tags, contact
+  links, and the scroll-reveal states used by js/reveal.js.
+  ============================================================ */
 
 /* ============ buttons ============ */
 
@@ -30,7 +30,7 @@
 }
 .btn-ghost:hover { border-color: var(--green); color: var(--green); }
 
-/* ============ about / subject dossier ============ */
+/* ============ about / profile panel ============ */
 
 .about-grid {
   display: grid;
@@ -41,7 +41,6 @@
 .about-text p { margin-bottom: 1.1rem; font-size: 1.05rem; }
 .about-text strong { color: var(--green); font-weight: 600; }
 
-/* case-file style panel */
 .about-panel {
   background: var(--bg-card);
   border: 1px solid var(--line);
@@ -79,7 +78,6 @@
   color: var(--green);
   animation: blink 2.2s steps(1) infinite;
 }
-/* blacked-out text, case-file style */
 .redacted {
   background: #10140f;
   color: transparent;
@@ -172,7 +170,7 @@
   text-transform: uppercase;
 }
 
-/* ============ VHS video facade (js/video.js) ============ */
+/* ============ video facade (js/video.js) ============ */
 
 .yt {
   position: absolute; inset: 0;
@@ -182,7 +180,7 @@
   filter: saturate(0.85);
 }
 .yt::before {
-  /* dark wash + scanlines over the thumbnail until hover */
+  /* dark wash over the thumbnail until hover */
   content: "";
   position: absolute; inset: 0;
   background:
@@ -218,7 +216,8 @@
    -2px 0 rgba(60, 255, 220, 0.4),
     0 0 18px rgba(141, 255, 171, 0.6);
 }
-.yt.playing::before, .yt.playing::after { display: none; }
+.yt.playing::after { display: none; }
+.yt.playing::before { display: none; }
 .yt iframe {
   position: absolute; inset: 0;
   width: 100%; height: 100%;

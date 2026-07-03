@@ -1,7 +1,7 @@
 /* ============================================================
-   layout.css — page skeleton: nav bar, hero (the "tape"),
-   section containers, archive dividers, and the footer.
-   ============================================================ */
+  layout.css — page skeleton: nav bar, hero, section
+  containers, archive dividers, and the footer.
+  ============================================================ */
 
 /* ============ nav ============ */
 
@@ -49,7 +49,7 @@
 }
 .nav-cta:hover { background: var(--green-dark); }
 
-/* ============ hero — a tape, mid-playback ============ */
+/* ============ hero ============ */
 
 .hero {
   min-height: 100svh;
@@ -81,7 +81,7 @@
   line-height: 0.9;
   letter-spacing: 0.12em;
   color: var(--green);
-  /* chromatic aberration — misaligned color channels, VHS-style */
+  /* subtle channel split for the title glow */
   text-shadow:
     3px 0 rgba(255, 45, 85, 0.35),
    -3px 0 rgba(60, 255, 220, 0.3),
