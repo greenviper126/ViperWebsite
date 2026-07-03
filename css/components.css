@@ -1,0 +1,245 @@
+/* ============================================================
+   components.css — reusable pieces: buttons, about panel,
+   project cards, YouTube facade, tags, contact links, and the
+   scroll-reveal states used by js/reveal.js.
+   ============================================================ */
+
+/* ============ buttons ============ */
+
+.btn {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 4px;
+  transition: all .2s;
+}
+.btn-solid {
+  background: var(--green);
+  color: #041007;
+  font-weight: 700;
+}
+.btn-solid:hover {
+  box-shadow: 0 0 22px rgba(0, 255, 65, 0.45);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+/* ============ about ============ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.about-text p { margin-bottom: 1.1rem; font-size: 1.05rem; }
+.about-text strong { color: var(--green); font-weight: 600; }
+
+/* terminal-style side panel */
+.about-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  overflow: hidden;
+}
+.panel-header {
+  background: var(--bg-raise);
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 1rem;
+  color: var(--text-dim);
+}
+.panel-header::before { content: "● "; color: var(--green); }
+.panel-list { list-style: none; padding: 1rem; }
+.panel-list li { padding: 0.3rem 0; }
+.panel-list .k {
+  color: var(--green-dim);
+  display: inline-block;
+  min-width: 7.5rem;
+}
+.panel-list .k::after { content: " ="; color: var(--text-dim); }
+
+@media (max-width: 720px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ project cards ============ */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.4rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+.card:hover {
+  border-color: var(--green-dark);
+  box-shadow: 0 6px 30px rgba(0, 255, 65, 0.07);
+  transform: translateY(-3px);
+}
+
+.card-media {
+  aspect-ratio: 16 / 9;
+  background: #000;
+  position: relative;
+}
+
+/* code-style placeholder for projects without a video */
+.card-media-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(rgba(0, 255, 65, 0.03), rgba(0, 0, 0, 0.6)),
+    var(--bg-raise);
+  border-bottom: 1px solid var(--line);
+}
+.card-media-code pre {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--green-dim);
+  opacity: .85;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
+}
+
+.card-body { padding: 1.1rem 1.2rem 1.3rem; flex: 1; }
+.card-body h3 {
+  font-family: var(--mono);
+  font-size: 1.02rem;
+  margin-bottom: 0.45rem;
+}
+.card-body h3 a {
+  color: var(--green);
+  text-decoration: none;
+}
+.card-body h3 a:hover { text-decoration: underline; }
+.card-body p {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  margin-bottom: 0.8rem;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--green-dim);
+  background: rgba(0, 255, 65, 0.06);
+  border: 1px solid var(--green-dark);
+  border-radius: 3px;
+  padding: 0.12rem 0.5rem;
+}
+
+/* ============ youtube facade (js/video.js) ============ */
+
+.yt {
+  position: absolute; inset: 0;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+.yt::before {
+  /* dark green wash over the thumbnail until hover */
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(3, 12, 5, 0.35);
+  transition: background .25s;
+}
+.yt:hover::before { background: rgba(3, 12, 5, 0.05); }
+.yt::after {
+  /* play button */
+  content: "▶";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px; height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--green);
+  background: rgba(4, 10, 5, 0.8);
+  border: 1px solid var(--green-dark);
+  border-radius: 50%;
+  transition: all .25s;
+}
+.yt:hover::after {
+  background: var(--green);
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.6);
+}
+.yt.playing::before, .yt.playing::after { display: none; }
+.yt iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* ============ contact links ============ */
+
+.contact-lead {
+  color: var(--text-dim);
+  margin-bottom: 1.8rem;
+  font-size: 1.05rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+.contact-link {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.8rem 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: all .2s;
+}
+.contact-link:hover {
+  border-color: var(--green);
+  color: var(--green);
+  box-shadow: 0 0 18px rgba(0, 255, 65, 0.12);
+}
+.contact-icon { color: var(--green); }
+.contact-note {
+  font-size: 0.7rem;
+  color: #041007;
+  background: var(--green);
+  border-radius: 3px;
+  padding: 0.05rem 0.4rem;
+  font-weight: 700;
+}
+
+/* ============ scroll reveal (js/reveal.js) ============ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s ease,
+              border-color .25s, box-shadow .25s;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

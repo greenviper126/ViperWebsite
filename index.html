@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIPER — Systems & Gameplay Programmer</title>
+  <meta name="description" content="Portfolio of VIPER — self-taught systems and gameplay programmer with 5+ years of experience. Luau/Roblox, Unity/C#, horror games.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐍</text></svg>">
+</head>
+<body>
+
+  <!-- horror overlay: scanlines + vignette -->
+  <div class="overlay-scanlines" aria-hidden="true"></div>
+  <div class="overlay-vignette" aria-hidden="true"></div>
+
+  <header class="nav" id="top">
+    <a class="nav-brand" href="#top">
+      <span class="nav-prompt">&gt;_</span> VIPER
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://github.com/greenviper126" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="hero-eyebrow">// systems &amp; gameplay programmer</p>
+      <h1 class="glitch" data-text="VIPER">VIPER</h1>
+      <p class="hero-sub">
+        5+ years building game systems in <span class="hl">Luau</span> and <span class="hl">C#</span>.
+        Drawn to the dark — I like making <span class="hl">horror games</span>.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#works">View my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">▼</div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <h2 class="section-title"><span class="section-num">01</span> About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a self-taught programmer with <strong>5+ years of experience</strong>, specializing in
+            systems and gameplay programming. My main platform is <strong>Roblox</strong>, though I also
+            have experience shipping small games in <strong>Unity</strong>.
+          </p>
+          <p>
+            I enjoy building modular systems that support gameplay and make development more
+            maintainable. My work focuses on both gameplay and backend tooling in Luau — frameworks,
+            NPC AI, procedural generation, and the atmospheric systems that make horror games work.
+          </p>
+        </div>
+        <aside class="about-panel">
+          <div class="panel-header">status.log</div>
+          <ul class="panel-list">
+            <li><span class="k">alias</span> VIPER</li>
+            <li><span class="k">experience</span> 5+ years</li>
+            <li><span class="k">primary</span> Luau / Roblox</li>
+            <li><span class="k">secondary</span> C# / Unity</li>
+            <li><span class="k">focus</span> systems · gameplay · tooling</li>
+            <li><span class="k">obsession</span> horror games</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ WORKS ============ -->
+    <section class="section" id="works">
+      <h2 class="section-title"><span class="section-num">02</span> Works</h2>
+
+      <!-- ---- 2026 ---- -->
+      <div class="year-divider"><span>2026</span></div>
+      <div class="works-grid">
+
+        <article class="card">
+          <div class="card-media card-media-code" aria-hidden="true">
+            <pre>local sf = VluxySF.new()
+sf:Serialize(sound)
+sf:Fetch("ambience/hum")</pre>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://github.com/greenviper126/VluxySF" target="_blank" rel="noopener">VluxySF ↗</a></h3>
+            <p>Vluxy Sound Factory — a Roblox library for serializing and fetching sounds.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Library</span><span class="tag">Open Source</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="pQmWUah0lEc" data-title="The Opus Cube Showcase"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://viper126.itch.io/the-opus-cube" target="_blank" rel="noopener">The Opus Cube ↗</a></h3>
+            <p>My fourth game built in Unity and released on itch.io.</p>
+            <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">itch.io</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media card-media-code" aria-hidden="true">
+            <pre>Vluxy.Boot({
+  style  = "retro",
+  genre  = "horror",
+  camera = "psx",
+})</pre>
+          </div>
+          <div class="card-body">
+            <h3>Vluxy Framework</h3>
+            <p>A framework designed for building retro horror games fast in Roblox.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Framework</span><span class="tag">Horror</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="-jzH51_nyGw" data-title="Deep Desolation Showcase"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://viper126.itch.io/deepdesolation" target="_blank" rel="noopener">Deep Desolation ↗</a></h3>
+            <p>My third game built in Unity and released on itch.io.</p>
+            <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Horror</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ---- 2025 ---- -->
+      <div class="year-divider"><span>2025</span></div>
+      <div class="works-grid">
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="Uez0OPutBTA" data-title="Anachronous Framework"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://github.com/greenviper126/AnachronousFramework" target="_blank" rel="noopener">Anachronous Framework ↗</a></h3>
+            <p>A framework built for a backrooms horror game.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Framework</span><span class="tag">Horror</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="S0YU7fdBrhE" data-title="MS Tape Showcase"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://viper126.itch.io/the-milgram-strain" target="_blank" rel="noopener">The Milgram Strain ↗</a></h3>
+            <p>My second game built in Unity and released on itch.io.</p>
+            <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Horror</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="vkARA6Rc7xE" data-title="CYES Showcase"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://viper126.itch.io/close-your-eyes-to-see" target="_blank" rel="noopener">Close Your Eyes To See ↗</a></h3>
+            <p>My first game built in Unity and released on itch.io.</p>
+            <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Horror</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="r5yZUAiSPFI" data-title="Interactive Snow Shader"></div>
+          </div>
+          <div class="card-body">
+            <h3>Snow Shader</h3>
+            <p>Interactive snow deformation made in Unity.</p>
+            <div class="tags"><span class="tag">Unity</span><span class="tag">Shaders</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="e6UQxZN_8qg" data-title="PSX Lobby"></div>
+          </div>
+          <div class="card-body">
+            <h3>PSX Lobby</h3>
+            <p>A UI lobby built for a Roblox PSX-style game.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">UI</span><span class="tag">PSX</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="iKBpWTZoeLg" data-title="Enemy AI"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://github.com/greenviper126/EnemyAIRoblox" target="_blank" rel="noopener">Full NPC System ↗</a></h3>
+            <p>A complete NPC system driven by a state machine framework.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">AI</span><span class="tag">Open Source</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="GJ9davPFfvg" data-title="PSX Apartment"></div>
+          </div>
+          <div class="card-body">
+            <h3>Test PSX Gameplay</h3>
+            <p>A test map made for level design and gameplay experiments.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Level Design</span><span class="tag">PSX</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="03svHRSyr2E" data-title="CMDR Commands"></div>
+          </div>
+          <div class="card-body">
+            <h3>CMDR Commands</h3>
+            <p>Custom admin/debug commands built with CMDR.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Tooling</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ---- Before 2025 ---- -->
+      <div class="year-divider"><span>Before 2025</span></div>
+      <div class="works-grid">
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="Qm1dRGwgSZY" data-title="Simple Maze Generator"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://github.com/greenviper126/Simple-Maze-Gen/blob/main/MazeGen.lua" target="_blank" rel="noopener">Simple Maze Generator ↗</a></h3>
+            <p>Random maze generation using recursive backtracking.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Procedural</span><span class="tag">Open Source</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="Yt-0wSlQCHg" data-title="Test Game"></div>
+          </div>
+          <div class="card-body">
+            <h3>Test Game</h3>
+            <p>A place used for testing new features and ideas. I made everything except the models and half the map; the UI was placeholder.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Prototype</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="IRc33sl9nZw" data-title="Liminality"></div>
+          </div>
+          <div class="card-body">
+            <h3><a href="https://www.roblox.com/games/15590920527/Liminality" target="_blank" rel="noopener">Liminality ↗</a></h3>
+            <p>A backrooms game with a large randomly generated maze.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Horror</span><span class="tag">Procedural</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="vNoWqTXtp30" data-title="Channel Red"></div>
+          </div>
+          <div class="card-body">
+            <h3>Channel Red</h3>
+            <p>An older project — shelved because Roblox's audio/video terms limited what I could do with it.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">Horror</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="AhjKUBZi50M" data-title="Backrooms Group Project"></div>
+          </div>
+          <div class="card-body">
+            <h3>Backrooms Group Project</h3>
+            <p>A backrooms game started by someone else — I joined and handled the scripting and UI.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">UI</span><span class="tag">Collab</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="yt" data-id="rMrZuGX_NYk" data-title="Inventory System"></div>
+          </div>
+          <div class="card-body">
+            <h3>Inventory System</h3>
+            <p>An inventory system made for a group — most of the UI built by me.</p>
+            <div class="tags"><span class="tag">Luau</span><span class="tag">UI</span><span class="tag">Systems</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-contact" id="contact">
+      <h2 class="section-title"><span class="section-num">03</span> Contact</h2>
+      <p class="contact-lead">Want to work together? <span class="hl">Discord</span> is the fastest way to reach me.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://discordapp.com/users/586817434170949651" target="_blank" rel="noopener">
+          <span class="contact-icon">✦</span> Discord <span class="contact-note">recommended</span>
+        </a>
+        <a class="contact-link" href="https://github.com/greenviper126" target="_blank" rel="noopener">
+          <span class="contact-icon">⌥</span> GitHub
+        </a>
+        <a class="contact-link" href="https://viper126.itch.io/" target="_blank" rel="noopener">
+          <span class="contact-icon">▣</span> itch.io
+        </a>
+        <a class="contact-link" href="https://www.roblox.com/users/2221989135/profile" target="_blank" rel="noopener">
+          <span class="contact-icon">◈</span> Roblox
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/nathan-taylor-9a8557227/" target="_blank" rel="noopener">
+          <span class="contact-icon">▤</span> LinkedIn
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer-blink">█</span> VIPER · 2021–2026 · <a href="#top">back to top ↑</a>
+  </footer>
+
+  <script src="js/video.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+</body>
+</html>
