@@ -133,7 +133,7 @@
 
 .section-title {
   font-family: var(--mono);
-  font-size: 1.55rem;
+  font-size: clamp(1.85rem, 3vw, 2.35rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -164,7 +164,7 @@
   margin: 3rem 0 1.6rem;
   font-family: var(--osd);
   color: var(--green);
-  font-size: 1.35rem;
+  font-size: clamp(1.85rem, 3.4vw, 2.6rem);
   letter-spacing: 0.2em;
   text-shadow: 0 0 10px rgba(88, 216, 120, 0.25);
 }
