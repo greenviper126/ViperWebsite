@@ -11,7 +11,8 @@
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1.1rem;
   padding: 0.9rem 1.5rem;
   background: rgba(4, 5, 4, 0.88);
   backdrop-filter: blur(8px);
@@ -30,24 +31,19 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+  gap: 1rem;
+  font-family: var(--osd);
+  font-size: 1.12rem;
+  letter-spacing: 0.08em;
+  border-left: 1px solid rgba(88, 216, 120, 0.2);
+  padding-left: 1rem;
 }
 .nav-links a {
-  color: var(--text-dim);
+  color: rgba(195, 204, 195, 0.9);
   text-decoration: none;
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--green); }
-.nav-cta {
-  border: 1px solid var(--green-dark);
-  padding: 0.35rem 0.8rem;
-  border-radius: 2px;
-  color: var(--green) !important;
-}
-.nav-cta:hover { background: var(--green-dark); }
 
 /* ============ hero ============ */
 
@@ -265,6 +261,22 @@
 }
 
 @media (max-width: 720px) {
+  .nav {
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-brand {
+    font-size: 1.35rem;
+    letter-spacing: 0.16em;
+  }
+
+  .nav-links {
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    padding-left: 0.7rem;
+  }
+
   .footer {
     margin-top: 6rem;
     padding-top: 3.8rem;
