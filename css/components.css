@@ -17,18 +17,33 @@
   transition: all .2s;
 }
 .btn-solid {
-  background: var(--green);
+  font-size: 0.98rem;
+  background: linear-gradient(180deg, rgba(141, 255, 171, 0.84), rgba(88, 216, 120, 0.66));
+  border: 1px solid rgba(141, 255, 171, 0.96);
   color: #04120a;
 }
 .btn-solid:hover {
-  background: var(--green-hot);
-  box-shadow: 0 0 22px rgba(141, 255, 171, 0.35);
+  background: linear-gradient(180deg, rgba(141, 255, 171, 0.94), rgba(88, 216, 120, 0.76));
+  border-color: rgba(141, 255, 171, 1);
+  box-shadow: 0 5px 20px rgba(141, 255, 171, 0.44);
 }
 .btn-ghost {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(141, 255, 171, 0.42);
+  background: linear-gradient(180deg, rgba(11, 16, 12, 0.82), rgba(11, 16, 12, 0.56));
   color: var(--text);
+  box-shadow:
+    inset 0 0 0 1px rgba(141, 255, 171, 0.08),
+    0 3px 10px rgba(0, 0, 0, 0.28);
 }
-.btn-ghost:hover { border-color: var(--green); color: var(--green); }
+.btn-ghost:hover {
+  border-color: var(--green-hot);
+  color: var(--green-hot);
+  background: linear-gradient(180deg, rgba(18, 29, 20, 0.9), rgba(11, 16, 12, 0.72));
+  box-shadow:
+    inset 0 0 0 1px rgba(141, 255, 171, 0.14),
+    0 4px 14px rgba(141, 255, 171, 0.18);
+  transform: translateY(-1px);
+}
 
 /* ============ about / profile panel ============ */
 
