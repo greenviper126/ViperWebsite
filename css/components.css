@@ -38,7 +38,11 @@
   gap: 1rem;
   align-items: start;
 }
-.about-text p { margin-bottom: 1.1rem; font-size: 1.05rem; }
+.about-text p {
+  margin-bottom: 1.1rem;
+  font-size: 1.05rem;
+  color: var(--text-dim);
+}
 .about-text strong { color: var(--green); font-weight: 600; }
 
 /* ============ software / tooling section ============ */
@@ -72,7 +76,7 @@
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  font-family: var(--mono);
+  font-family: var(--font-ui);
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -83,7 +87,7 @@
   width: 10.6rem;
   height: calc(100% - 0.45rem);
   padding: 0.2rem 0 0.2rem 0.62rem;
-  background: linear-gradient(90deg, rgba(8, 13, 9, 0.96) 0%, rgba(8, 13, 9, 0.93) 58%, rgba(8, 13, 9, 0) 100%);
+  background: linear-gradient(90deg, var(--surface-strong) 0%, var(--surface-strong-soft) 58%, rgba(8, 13, 9, 0) 100%);
   pointer-events: none;
 }
 
@@ -95,9 +99,9 @@
   overflow: hidden;
   gap: 0;
   padding: 0.34rem 0.2rem 0.34rem 8rem;
-  border: 1px solid rgba(88, 216, 120, 0.12);
+  border: 1px solid var(--border-soft);
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(11, 16, 12, 0.62), rgba(11, 16, 12, 0.24));
+  background: linear-gradient(90deg, var(--surface-mid), var(--surface-low));
   -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
@@ -128,11 +132,11 @@
 }
 
 .stack-pill {
-  font-family: var(--mono);
+  font-family: var(--font-ui);
   font-size: 0.7rem;
   color: var(--green);
-  border: 1px solid rgba(88, 216, 120, 0.23);
-  background: rgba(8, 13, 9, 0.48);
+  border: 1px solid var(--border-mid);
+  background: var(--surface-chip);
   border-radius: 2px;
   padding: 0.2rem 0.62rem;
   letter-spacing: 0.05em;
@@ -142,8 +146,8 @@
 
 .stack-pill:hover {
   transform: translateY(-2px);
-  border-color: rgba(141, 255, 171, 0.52);
-  background: rgba(12, 24, 15, 0.74);
+  border-color: var(--border-highlight);
+  background: var(--surface-chip-hover);
   color: var(--green-hot);
 }
 

@@ -5,19 +5,60 @@
   ============================================================ */
 
 :root {
-  --bg:        #040504;
-  --bg-raise:  #0a0d0a;
-  --bg-card:   #0b100c;
-  --line:      #1a221b;
-  --green:     #58d878;   /* phosphor / night-vision green */
-  --green-hot: #8dffab;   /* bright — used sparingly for glows */
-  --green-dim: #3d9c55;
-  --green-dark:#123c1f;
-  --text:      #c3ccc3;
-  --text-dim:  #75816f;
-  --osd:  "VT323", monospace;
-  --mono: "Courier Prime", Courier, monospace;
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* core palette (12 colors total) */
+  --color-bg-900: #040504;
+  --color-bg-850: #0a0d0a;
+  --color-bg-800: #0b100c;
+  --color-border-700: #1a221b;
+  --color-accent-500: #58d878;
+  --color-accent-400: #8dffab;
+  --color-accent-600: #3d9c55;
+  --color-accent-800: #123c1f;
+  --color-text-200: #c3ccc3;
+  --color-text-500: #b3beaa;
+  --color-split-red: #ff2d55;
+  --color-split-cyan: #3cffdc;
+
+  /* core typography (4 fonts total) */
+  --font-retro: "VT323", monospace;
+  --font-code: "Courier Prime", Courier, monospace;
+  --font-humanist: "Inter", system-ui, -apple-system, sans-serif;
+  --font-system: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* legacy aliases (kept for compatibility) */
+  --bg:        var(--color-bg-900);
+  --bg-raise:  var(--color-bg-850);
+  --bg-card:   var(--color-bg-800);
+  --line:      var(--color-border-700);
+  --green:     var(--color-accent-500);   /* phosphor / night-vision green */
+  --green-hot: var(--color-accent-400);   /* bright — used sparingly for glows */
+  --green-dim: var(--color-accent-600);
+  --green-dark:var(--color-accent-800);
+  --text:      var(--color-text-200);
+  --text-dim:  var(--color-text-500);
+  --osd:  var(--font-retro);
+  --mono: var(--font-code);
+  --sans: var(--font-humanist);
+
+  /* typography roles */
+  --font-display: var(--osd);
+  --font-ui: var(--mono);
+  --font-body: var(--sans);
+  --font-supporting: var(--font-system);
+
+  /* semantic UI palette */
+  --text-soft: rgba(195, 204, 195, 0.9);
+  --bg-glass: rgba(4, 5, 4, 0.88);
+  --surface-low: rgba(11, 16, 12, 0.24);
+  --surface-mid: rgba(11, 16, 12, 0.62);
+  --surface-strong: rgba(8, 13, 9, 0.96);
+  --surface-strong-soft: rgba(8, 13, 9, 0.93);
+  --surface-chip: rgba(8, 13, 9, 0.48);
+  --surface-chip-hover: rgba(12, 24, 15, 0.74);
+  --border-soft: rgba(88, 216, 120, 0.12);
+  --border-mid: rgba(88, 216, 120, 0.23);
+  --border-divider: rgba(88, 216, 120, 0.2);
+  --border-highlight: rgba(141, 255, 171, 0.52);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +68,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--sans);
+  font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
 }
