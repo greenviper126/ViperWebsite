@@ -248,6 +248,23 @@
   position: relative;
 }
 
+/* static-image placeholder for projects without a video */
+.card-media-image {
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(140deg, rgba(11, 16, 12, 0.95), rgba(6, 10, 7, 0.95));
+}
+
+.card-media-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.5;
+}
+
 /* code-style placeholder for projects without a video */
 .card-media-code {
   display: flex;

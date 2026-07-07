@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Project image placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1b12"/>
+      <stop offset="55%" stop-color="#09100b"/>
+      <stop offset="100%" stop-color="#050806"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.2" cy="0.2" r="0.7">
+      <stop offset="0%" stop-color="#8dffab" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#8dffab" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+
+  <g stroke="#58d878" stroke-opacity="0.28" fill="none">
+    <path d="M0 420L220 320L410 360L640 220L900 330L1280 250" stroke-width="3"/>
+    <path d="M0 520L260 450L500 520L700 430L940 560L1280 470" stroke-width="2"/>
+    <path d="M0 600L140 570L420 620L690 540L980 640L1280 590" stroke-width="2"/>
+  </g>
+
+  <g fill="#8dffab" fill-opacity="0.5" font-family="Courier Prime, Courier, monospace" text-anchor="middle">
+    <text x="640" y="338" font-size="44" letter-spacing="7">PROJECT PREVIEW</text>
+    <text x="640" y="382" font-size="22" letter-spacing="5">DROP IN AN IMAGE FOR THIS CARD</text>
+  </g>
+</svg>
