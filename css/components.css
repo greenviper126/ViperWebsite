@@ -64,6 +64,7 @@
 
 .section-stack {
   padding-top: 1.5rem;
+  padding-bottom: 10rem;
 }
 
 .stack-marquee {
@@ -193,6 +194,9 @@
 
 @media (max-width: 720px) {
   .about-grid { grid-template-columns: 1fr; }
+  .section-stack {
+    padding-bottom: 5.5rem;
+  }
   .stack-marquee {
     max-width: none;
     margin: 0;
