@@ -26,6 +26,11 @@ find and edit.
 - Change colors → the `:root` variables at the top of `css/base.css`.
 - Change text → it's all in `index.html`, nothing is generated.
 
+## Analytics
+
+Page views are tracked with GoatCounter (no cookies, no consent banner needed).
+View stats at **https://viper.goatcounter.com/** (requires login).
+
 ## Preview locally
 
 Just double-click `index.html`, or for a proper local server:
