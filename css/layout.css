@@ -301,7 +301,7 @@
     transform: translate(-50%, -145%);
   }
 
-  .footer-visitors {
+  .footer-visitors:not([hidden]) {
     position: static;
     display: block;
     margin-top: 0.5rem;
