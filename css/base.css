@@ -63,7 +63,11 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* clip (not hidden) so it never turns the root into a scroll container */
+  overflow-x: clip;
+}
 
 body {
   background: var(--bg);
