@@ -21,8 +21,9 @@
 
 .nav-brand {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  letter-spacing: 0.22em;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   color: var(--text);
   text-decoration: none;
 }
@@ -32,9 +33,10 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-family: var(--font-display);
-  font-size: 1.12rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   border-left: 1px solid var(--border-divider);
   padding-left: 1rem;
 }
@@ -56,20 +58,20 @@
   text-align: center;
   padding: 6rem 1.5rem 3rem;
   position: relative;
-  background: var(--bg);
 }
 
 .hero-eyebrow {
-  font-family: var(--mono);
+  font-family: var(--font-body);
   color: var(--text-dim);
-  font-size: 0.85rem;
-  letter-spacing: 0.35em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   margin-bottom: 0.9rem;
 }
 
 .hero h1 {
-  font-family: var(--osd);
+  font-family: var(--font-logo);
   font-size: clamp(4.5rem, 17vw, 11rem);
   font-weight: 400;
   line-height: 0.9;
@@ -101,8 +103,8 @@
   position: absolute;
   bottom: 2rem;
   color: var(--green-dark);
-  font-family: var(--osd);
-  font-size: 4.5rem;
+  font-family: var(--font-display);
+  font-size: 3rem;
   line-height: 1;
   animation: drift 2.4s ease-in-out infinite;
   opacity: 1;
@@ -128,13 +130,13 @@
 }
 
 .section-title {
-  font-family: var(--mono);
-  font-size: clamp(1.85rem, 3vw, 2.35rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 2.2rem;
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 1px solid var(--line);
   padding-bottom: 0.8rem;
 }
 .section-num {
@@ -143,9 +145,9 @@
 }
 .section-tag {
   display: block;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.3em;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   color: var(--text-dim);
   margin-top: 0.35rem;
 }
@@ -158,10 +160,11 @@
   align-items: center;
   gap: 1rem;
   margin: 3rem 0 1.6rem;
-  font-family: var(--osd);
+  font-family: var(--font-display);
   color: var(--green);
-  font-size: clamp(1.7rem, 3vw, 2.35rem);
-  letter-spacing: 0.2em;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-shadow: 0 0 10px rgba(88, 216, 120, 0.25);
 }
 .year-divider::before,
@@ -179,11 +182,11 @@
 
 .footer {
   position: relative;
-  margin-top: 15rem;
+  margin-top: 6rem;
   border-top: 1px solid var(--line);
   padding: 3.1rem 1.5rem 1.7rem;
-  font-family: var(--mono);
-  font-size: 0.82rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
   color: var(--text-dim);
   text-align: center;
 }
@@ -241,7 +244,7 @@
   min-height: 2.15rem;
   padding: 0.3rem 0.65rem;
   border: 1px solid rgba(88, 216, 120, 0.22);
-  border-radius: 2px;
+  border-radius: var(--radius-btn);
   background: rgba(11, 16, 12, 0.58);
   color: var(--text) !important;
   font-size: 0.97rem;
@@ -275,13 +278,13 @@
   }
 
   .nav-brand {
-    font-size: 1.35rem;
-    letter-spacing: 0.16em;
+    font-size: 1.15rem;
+    letter-spacing: 0.1em;
   }
 
   .nav-links {
     gap: 0.65rem;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     padding-left: 0.7rem;
   }
 
