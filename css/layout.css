@@ -20,11 +20,10 @@
 }
 
 .nav-brand {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--text);
+  letter-spacing: 0.12em;
+  color: var(--text-bright);
   text-decoration: none;
 }
 .nav-brand:hover { color: var(--green); }
@@ -33,11 +32,9 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-family: var(--font-body);
   font-size: 0.92rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  border-left: 1px solid var(--border-divider);
+  border-left: 1px solid var(--line-strong);
   padding-left: 1rem;
 }
 .nav-links a {
@@ -61,13 +58,12 @@
 }
 
 .hero-eyebrow {
-  font-family: var(--font-body);
-  color: var(--text-dim);
+  color: var(--green-muted);
   font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .hero h1 {
@@ -77,18 +73,17 @@
   line-height: 0.9;
   letter-spacing: 0.12em;
   color: var(--green);
-  /* subtle channel split for the title glow */
+  /* subtle channel split — the logo's one stylized effect */
   text-shadow:
     2px 0 rgba(255, 45, 85, 0.28),
-   -2px 0 rgba(60, 255, 220, 0.24),
-    0 0 14px rgba(88, 216, 120, 0.18);
+   -2px 0 rgba(60, 255, 220, 0.24);
 }
 
 .hero-sub {
   max-width: 36rem;
-  margin-top: 1.4rem;
-  color: var(--text-dim);
-  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  color: var(--text);
+  font-size: 1.1rem;
 }
 
 .hero-actions {
@@ -102,12 +97,11 @@
 .hero-scroll {
   position: absolute;
   bottom: 2rem;
-  color: var(--green-dark);
-  font-family: var(--font-display);
-  font-size: 3rem;
+  color: var(--text-dim);
+  font-size: 2.5rem;
+  opacity: 0.6;
   line-height: 1;
   animation: drift 2.4s ease-in-out infinite;
-  opacity: 1;
   transition: opacity .2s ease;
 }
 
@@ -130,52 +124,41 @@
 }
 
 .section-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 2.2rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-bright);
+  margin-bottom: 2rem;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.9rem;
+  position: relative;
 }
-.section-num {
-  color: var(--green-dim);
-  margin-right: 0.6rem;
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 3rem; height: 2px;
+  background: var(--green);
 }
-.section-tag {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  color: var(--text-dim);
-  margin-top: 0.35rem;
-}
-
-.section-contact { padding-bottom: 5rem; }
 
 /* archive dividers inside Works */
 .year-divider {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 3rem 0 1.6rem;
-  font-family: var(--font-display);
+  margin: 3.25rem 0 1.5rem;
   color: var(--green);
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-shadow: 0 0 10px rgba(88, 216, 120, 0.25);
+  font-size: clamp(1.35rem, 2.2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
 }
-.year-divider::before,
 .year-divider::after {
   content: "";
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--green-dark));
-}
-.year-divider::after {
-  background: linear-gradient(90deg, var(--green-dark), transparent);
+  background: var(--line);
 }
 
 /* ============ footer ============ */
@@ -185,7 +168,6 @@
   margin-top: 6rem;
   border-top: 1px solid var(--line);
   padding: 3.1rem 1.5rem 1.7rem;
-  font-family: var(--font-body);
   font-size: 0.88rem;
   color: var(--text-dim);
   text-align: center;
@@ -208,16 +190,15 @@
   line-height: 0;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid rgba(88, 216, 120, 0.24);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgba(11, 16, 12, 0.55);
+  background: var(--bg-card);
   text-decoration: none;
   transition: border-color .2s, background .2s, transform .2s;
 }
 
 .footer-contact-link:hover {
-  border-color: rgba(88, 216, 120, 0.5);
-  background: rgba(11, 16, 12, 0.8);
+  border-color: var(--green);
   transform: translateY(-1px);
 }
 
@@ -243,24 +224,20 @@
   justify-content: center;
   min-height: 2.15rem;
   padding: 0.3rem 0.65rem;
-  border: 1px solid rgba(88, 216, 120, 0.22);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-btn);
-  background: rgba(11, 16, 12, 0.58);
+  background: var(--bg-card);
   color: var(--text) !important;
-  font-size: 0.97rem;
-  font-weight: 400;
+  font-size: 0.88rem;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.02em;
-  opacity: 0.97;
   text-decoration: none;
   transition: color .2s, border-color .2s, background .2s, opacity .2s;
 }
 
 .footer-top:hover {
   color: var(--green) !important;
-  border-color: rgba(88, 216, 120, 0.38);
-  background: rgba(11, 16, 12, 0.75);
-  opacity: 1;
+  border-color: var(--green-line);
 }
 
 .footer-visitors {
@@ -268,7 +245,6 @@
   left: 1.5rem;
   bottom: 1.7rem;
   color: var(--text-dim);
-  letter-spacing: 0.02em;
 }
 
 @media (max-width: 720px) {
@@ -278,7 +254,7 @@
   }
 
   .nav-brand {
-    font-size: 1.15rem;
+    font-size: 1rem;
     letter-spacing: 0.1em;
   }
 
