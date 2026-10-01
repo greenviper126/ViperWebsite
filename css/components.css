@@ -7,42 +7,36 @@
 /* ============ buttons ============ */
 
 .btn {
-  font-family: var(--mono);
+  font-family: var(--font-body);
   font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-decoration: none;
   padding: 0.75rem 1.6rem;
-  border-radius: 2px;
-  transition: all .2s;
+  border-radius: var(--radius-btn);
+  transition: background .2s, border-color .2s, color .2s, box-shadow .2s, transform .2s;
 }
+.btn:hover { transform: translateY(-1px); }
 .btn-solid {
   font-size: 0.98rem;
-  background: linear-gradient(180deg, rgba(141, 255, 171, 0.84), rgba(88, 216, 120, 0.66));
-  border: 1px solid rgba(141, 255, 171, 0.96);
+  background: var(--green);
+  border: 1px solid var(--green);
   color: #04120a;
 }
 .btn-solid:hover {
-  background: linear-gradient(180deg, rgba(141, 255, 171, 0.94), rgba(88, 216, 120, 0.76));
-  border-color: rgba(141, 255, 171, 1);
-  box-shadow: 0 5px 20px rgba(141, 255, 171, 0.44);
+  background: var(--green-hot);
+  border-color: var(--green-hot);
+  box-shadow: 0 6px 24px rgba(141, 255, 171, 0.3);
 }
 .btn-ghost {
-  border: 1px solid rgba(141, 255, 171, 0.42);
-  background: linear-gradient(180deg, rgba(11, 16, 12, 0.82), rgba(11, 16, 12, 0.56));
-  color: var(--text);
-  box-shadow:
-    inset 0 0 0 1px rgba(141, 255, 171, 0.08),
-    0 3px 10px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(141, 255, 171, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-bright);
 }
 .btn-ghost:hover {
-  border-color: var(--green-hot);
+  border-color: var(--green);
   color: var(--green-hot);
-  background: linear-gradient(180deg, rgba(18, 29, 20, 0.9), rgba(11, 16, 12, 0.72));
-  box-shadow:
-    inset 0 0 0 1px rgba(141, 255, 171, 0.14),
-    0 4px 14px rgba(141, 255, 171, 0.18);
-  transform: translateY(-1px);
+  background: rgba(88, 216, 120, 0.06);
 }
 
 /* ============ about / profile panel ============ */
@@ -96,7 +90,7 @@
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  font-family: var(--font-ui);
+  font-family: var(--font-body);
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -174,13 +168,13 @@
 }
 
 .stack-pill {
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   color: var(--green);
   border: 1px solid var(--border-mid);
   background: var(--surface-chip);
-  border-radius: 2px;
-  padding: 0.2rem 0.62rem;
+  border-radius: var(--radius-pill);
+  padding: 0.22rem 0.75rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
@@ -235,16 +229,16 @@
 .card {
   background: var(--bg-card);
   border: 1px solid var(--line);
-  border-radius: 3px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: border-color .25s, box-shadow .25s, transform .25s;
 }
 .card:hover {
-  border-color: var(--green-dark);
-  box-shadow: 0 6px 30px rgba(88, 216, 120, 0.06);
-  transform: translateY(-3px);
+  border-color: rgba(88, 216, 120, 0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(88, 216, 120, 0.08);
+  transform: translateY(-4px);
 }
 
 .card-media {
@@ -282,7 +276,7 @@
   border-bottom: 1px solid var(--line);
 }
 .card-media-code pre {
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 0.8rem;
   color: var(--green-dim);
   opacity: .9;
@@ -291,50 +285,34 @@
 
 .card-body { padding: 1.1rem 1.2rem 1.3rem; flex: 1; }
 .card-body h3 {
-  font-family: var(--mono);
-  font-size: 1.02rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 0.45rem;
 }
+.card-body h3 { color: var(--text-bright); }
 .card-body h3 a {
-  color: var(--green);
+  color: var(--text-bright);
   text-decoration: none;
+  transition: color .2s;
 }
-.card-body h3 a:hover { text-decoration: underline; }
+.card:hover h3 a { color: var(--green); }
 .card-body p {
-  font-size: 0.92rem;
+  font-size: 0.97rem;
   color: var(--text-dim);
   margin-bottom: 0.8rem;
 }
 
 .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; }
 .tag {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--green);
-  background:
-    linear-gradient(180deg, rgba(88, 216, 120, 0.14), rgba(88, 216, 120, 0.06));
-  border: 1px solid rgba(88, 216, 120, 0.55);
-  border-radius: 2px;
-  padding: 0.16rem 0.56rem;
-  text-transform: uppercase;
-  box-shadow:
-    0 0 0 1px rgba(7, 12, 8, 0.6),
-    0 2px 6px rgba(0, 0, 0, 0.25);
-  transition: none;
-}
-
-.card:hover .tag,
-.tag:hover {
-  transform: none;
-  color: var(--green);
-  border-color: rgba(88, 216, 120, 0.55);
-  background:
-    linear-gradient(180deg, rgba(88, 216, 120, 0.14), rgba(88, 216, 120, 0.06));
-  box-shadow:
-    0 0 0 1px rgba(7, 12, 8, 0.6),
-    0 2px 6px rgba(0, 0, 0, 0.25);
+  background: rgba(88, 216, 120, 0.1);
+  border: 1px solid rgba(88, 216, 120, 0.16);
+  border-radius: var(--radius-pill);
+  padding: 0.16rem 0.7rem;
 }
 
 /* ============ video facade (js/video.js) ============ */
@@ -342,10 +320,15 @@
 .yt {
   position: absolute; inset: 0;
   cursor: pointer;
-  background-size: cover;
-  background-position: center;
+  /* larger than "cover" to crop the black bars in YouTube's 4:3 thumbnails
+     and in the editor recordings themselves. Extra-wide recordings set their
+     own --thumb-zoom / --thumb-y inline in index.html */
+  background-size: auto var(--thumb-zoom, 150%);
+  background-position: center var(--thumb-y, 50%);
   filter: saturate(0.85);
+  transition: transform .4s ease;
 }
+.card:hover .yt:not(.playing) { transform: scale(1.04); }
 .yt::before {
   /* dark wash over the thumbnail until hover */
   content: "";
@@ -366,9 +349,10 @@
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--osd);
-  font-size: 1.5rem;
-  letter-spacing: 0.18em;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   color: rgba(230, 240, 230, 0.92);
   text-shadow:
     2px 0 rgba(255, 45, 85, 0.45),
@@ -405,13 +389,13 @@
   gap: 0.9rem;
 }
 .contact-link {
-  font-family: var(--mono);
+  font-family: var(--font-body);
   font-size: 0.92rem;
   text-decoration: none;
   color: var(--text);
   background: var(--bg-card);
   border: 1px solid var(--line);
-  border-radius: 3px;
+  border-radius: var(--radius-btn);
   padding: 0.8rem 1.3rem;
   display: flex;
   align-items: center;
@@ -425,10 +409,10 @@
 }
 .contact-icon { color: var(--green); }
 .contact-note {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #04120a;
   background: var(--green);
-  border-radius: 2px;
+  border-radius: var(--radius-pill);
   padding: 0.05rem 0.4rem;
   font-weight: 700;
 }

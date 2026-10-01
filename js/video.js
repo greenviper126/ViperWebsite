@@ -55,7 +55,7 @@
           top: "50%",
           transform: "translate(-50%, -50%)",
           zIndex: "2",
-          fontFamily: "var(--mono)",
+          fontFamily: "var(--font-body)",
           background: "rgba(2, 8, 4, 0.9)",
           border: "1px solid rgba(88, 216, 120, 0.45)",
           padding: "0.45rem",
@@ -104,7 +104,7 @@
         copyBtn.type = "button";
         copyBtn.textContent = "Copy link";
         Object.assign(copyBtn.style, {
-          fontFamily: "var(--mono)",
+          fontFamily: "var(--font-body)",
           fontSize: "0.72rem",
           cursor: "pointer",
           color: "#d9ffe4",
